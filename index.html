@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ordinal Numbers Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash">
+  <img src="assets/innovine-logo.png" alt="Innovine Solutions">
+</div>
+
+<div id="startScreen" class="screen">
+  <div class="startCard">
+    <h1>🐾 Ordinal Number Adventure! 🐾</h1>
+    <p>Look at the animals in the line.</p>
+    <p>Find the animal we ask about and choose its position.</p>
+    <p class="example">1st = first &nbsp; 2nd = second &nbsp; 3rd = third</p>
+    <button id="startBtn" type="button">▶ Start Game</button>
+  </div>
+</div>
+
+<div id="game" class="hidden">
+  <header>
+    <h1>Ordinal Numbers</h1>
+    <div class="topRow">
+      <button id="hearBtn" class="smallBtn" type="button">🔊 Hear</button>
+      <div id="progress">1 / 10</div>
+      <div id="score">⭐ 0</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="questionArea">
+      <div id="targetAnimal" aria-live="polite">
+        <img id="targetImage" src="" alt="">
+        <div id="targetName"></div>
+      </div>
+      <p id="question">Which position is the elephant?</p>
+    </section>
+
+    <section id="animalLine" aria-label="Animals in order"></section>
+
+    <p class="chooseText">Tap the correct ordinal number.</p>
+    <section id="answers" class="answers"></section>
+
+    <div id="feedback" class="feedback hidden"></div>
+    <div id="confetti"></div>
+  </main>
+</div>
+
+<div id="endScreen" class="screen hidden">
+  <div class="startCard">
+    <div class="trophy">🏆</div>
+    <h1>Great Job!</h1>
+    <p id="finalScore">You scored 10 out of 10!</p>
+    <p>🎉 You know your ordinal numbers!</p>
+    <button id="againBtn" type="button">🔄 Play Again</button>
+  </div>
+</div>
+
+<audio id="music" loop preload="auto">
+  <source src="assets/background-music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="speech.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
