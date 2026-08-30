@@ -1,0 +1,62 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:"Trebuchet MS",Arial,sans-serif;background:linear-gradient(135deg,#fff3c7,#dff5ff,#e8ffd9);color:#33405c;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+button{font-family:inherit;border:0;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.hidden{display:none!important}
+
+#splash{position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:9999}
+#splash img{width:min(65vw,330px);max-height:55vh;object-fit:contain}
+
+.screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;z-index:500;background:linear-gradient(135deg,#fff3c7,#dff5ff,#e8ffd9)}
+.startCard{width:min(92vw,600px);background:#fff;border-radius:28px;padding:30px 24px;text-align:center;box-shadow:0 8px 25px #0002;border:4px solid #ffd66b}
+.startCard h1{font-size:clamp(1.5rem,4vw,2.3rem);margin-bottom:15px;color:#40546e}
+.startCard p{font-size:clamp(1rem,2.4vw,1.25rem);margin:9px 0}
+.example{background:#f2f8ff;padding:10px;border-radius:14px}
+#startBtn,#againBtn{margin-top:18px;background:#ffcf4a;color:#493b00;padding:14px 28px;border-radius:18px;font-size:1.2rem;font-weight:bold;box-shadow:0 4px 0 #d7a900}
+#startBtn:active,#againBtn:active{transform:translateY(3px);box-shadow:none}
+
+#game{height:100dvh;display:flex;flex-direction:column}
+header{padding:10px 12px 5px;text-align:center;flex:0 0 auto}
+header h1{font-size:clamp(1.35rem,3vw,2rem);color:#40546e}
+.topRow{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:7px}
+.smallBtn,.topRow #progress,.topRow #score{padding:8px 13px;border-radius:14px;font-weight:bold}
+.smallBtn{background:#fff;border:2px solid #8bc8ff}
+#progress{background:#fff0b3}
+#score{background:#d9f5d0}
+
+main{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;padding:5px 10px 10px;position:relative}
+.questionCard{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;min-height:0;width:100%}
+#question{font-size:clamp(1.05rem,2.5vw,1.55rem);font-weight:bold;text-align:center;margin-bottom:6px}
+#animalCard{position:relative;width:min(58vw,250px);height:min(38vh,220px);min-height:135px;background:#fff;border:4px solid #ff9fbd;border-radius:24px;box-shadow:0 6px 15px #0002;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:8px}
+#animalCard:active{transform:scale(.96)}
+#animalImage{width:90%;height:78%;object-fit:contain;pointer-events:none}
+#animalName{font-size:1.15rem;font-weight:bold;color:#40546e}
+.tapHint{font-size:.65rem;color:#777;margin-top:2px}
+
+.chooseText{text-align:center;font-weight:bold;font-size:clamp(.9rem,2vw,1.15rem);margin:5px}
+.answers{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;width:min(96vw,700px);padding-bottom:3px}
+.answer{background:#fff;border:3px solid #b7d8ff;border-radius:14px;min-height:48px;padding:7px 4px;font-size:clamp(.85rem,2vw,1.1rem);font-weight:bold;color:#43516a;box-shadow:0 3px 0 #a7c8e8}
+.answer:active{transform:translateY(2px);box-shadow:none}
+.answer.correct{background:#d9f8d4;border-color:#62bf62;box-shadow:0 3px 0 #43a943}
+.answer.wrong{background:#ffe0e0;border-color:#ef5350}
+
+.feedback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:20;font-size:7rem;pointer-events:none;text-shadow:0 4px 12px #0003}
+.feedback.good{font-size:clamp(3rem,9vw,6rem);color:#34a853}
+.feedback.bad{color:#e53935;font-size:clamp(5rem,18vw,11rem)}
+
+.trophy{font-size:5rem;margin-bottom:5px}
+#finalScore{font-size:1.5rem;font-weight:bold;margin:15px 0}
+
+.confettiPiece{position:fixed;top:-20px;width:10px;height:18px;z-index:30;animation:fall 1.2s linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:0}}
+
+@media(max-width:600px){
+  header{padding-top:6px}
+  .topRow{gap:6px}
+  .smallBtn,.topRow #progress,.topRow #score{padding:6px 9px;font-size:.78rem}
+  #animalCard{width:55vw;height:31vh}
+  #animalImage{height:74%}
+  .answers{gap:5px}
+  .answer{min-height:43px;border-width:2px;border-radius:11px;padding:5px 2px}
+  .questionCard{flex:1}
+}
